@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa del Perú</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #mapa-container {
+      position: relative;
+      width: 700px;
+      height: auto;
+    }
+
+    #tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      display: none;
+      pointer-events: none;
+    }
+
+    svg path {
+      fill: #90caf9;
+      stroke: #333;
+      stroke-width: 0.5;
+      transition: fill 0.2s;
+      cursor: pointer;
+    }
+
+    svg path.resaltado {
+      fill: #1565c0 !important;
+      filter: drop-shadow(0 0 5px rgba(21, 101, 192, 0.6));
+      transition: all 0.2s ease;
+    }
+
+    svg path:hover {
+      fill: #1976d2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="mapa-container">
+    <div id="tooltip"></div>
+    <div id="mapaPeru"></div>
+  </div>
+
+  <script src="js/mapa.js"></script>
+</body>
+
+</html>
